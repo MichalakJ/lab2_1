@@ -26,4 +26,5 @@ public class BinarySearchTest {
 		SearchResult result = BinarySearch.search(key, sequence);
 		assertThat(result.getPosition(), equalTo(0));
 	}
+	
 }
