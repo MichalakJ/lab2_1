@@ -26,5 +26,19 @@ public class BinarySearchTest {
 		SearchResult result = BinarySearch.search(key, sequence);
 		assertThat(result.getPosition(), equalTo(0));
 	}
+	@Test
+	public void whenSequenceLengthOneAndKeyNotInSequenceThenResoultNotFound(){
+		int[] sequence = new int[]{3};
+		int key = 6;
+		SearchResult result = BinarySearch.search(key, sequence);
+		assertThat(result.isFound(), equalTo(false));
+	}
+	@Test
+	public void whenSequenceLenghtOneAndKeyInSequenceThenResultEqualsMinusOne(){
+		int[] sequence = new int[]{3};
+		int key = 6;
+		SearchResult result = BinarySearch.search(key, sequence);
+		assertThat(result.getPosition(), equalTo(-1));
+	}
 	
 }
