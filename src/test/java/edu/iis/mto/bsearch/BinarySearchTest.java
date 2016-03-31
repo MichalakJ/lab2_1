@@ -68,6 +68,20 @@ public class BinarySearchTest {
 		SearchResult result = BinarySearch.search(key, sequence);
 		assertThat(result.getPosition(), equalTo(sequence.length-1));
 	}
+	@Test
+	public void WhenSequenceLengthGreaterThanOneAndSearchedElemenetIsMiddleInSequenceThenResultIsFound(){
+		int[] sequence = new int[]{3,5,7,66,4,2,9};
+		int key = 66;
+		SearchResult result = BinarySearch.search(key, sequence);
+		assertThat(result.isFound(), equalTo(true));
+	}
+	@Test
+	public void WhenSequenceLengthGreaterThanOneAndSearchedElemenetIsMidlleInSequenceThenKeyIsFound(){
+		int[] sequence = new int[]{3,5,7,66,4,2,9};
+		int key = 66;
+		SearchResult result = BinarySearch.search(key, sequence);
+		assertThat(result.getPosition(), equalTo(sequence.length/2));
+	}
 	
 	
 }
