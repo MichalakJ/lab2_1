@@ -19,4 +19,11 @@ public class BinarySearchTest {
 		assertThat(result.isFound(), equalTo(true));
 	}
 
+	@Test
+	public void whenSequenceLenghtOneAndKeyInSequenceThenResultEqualsKey(){
+		int[] sequence = new int[]{3};
+		int key = 3;
+		SearchResult result = BinarySearch.search(key, sequence);
+		assertThat(result.getPosition(), equalTo(0));
+	}
 }
