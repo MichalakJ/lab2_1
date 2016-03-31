@@ -40,5 +40,20 @@ public class BinarySearchTest {
 		SearchResult result = BinarySearch.search(key, sequence);
 		assertThat(result.getPosition(), equalTo(-1));
 	}
+	@Test
+	public void WhenSequenceLengthGreaterThanOneAndSearchedElemenetIsFirstInSequenceThenResultIsFound(){
+		int[] sequence = new int[]{3,5,7,4,2,9};
+		int key = 3;
+		SearchResult result = BinarySearch.search(key, sequence);
+		assertThat(result.isFound(), equalTo(true));
+	}
+	@Test
+	public void WhenSequenceLengthGreaterThanOneAndSearchedElemenetIsFirstInSequenceThenKeyIsFound(){
+		int[] sequence = new int[]{3,5,7,4,2,9};
+		int key = 3;
+		SearchResult result = BinarySearch.search(key, sequence);
+		assertThat(result.getPosition(), equalTo(0));
+	}
+	
 	
 }
