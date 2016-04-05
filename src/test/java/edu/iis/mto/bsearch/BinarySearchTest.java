@@ -96,5 +96,10 @@ public class BinarySearchTest {
                 SearchResult result = BinarySearch.search(key, sequence);
                 assertThat(result.getPosition(), equalTo(-1));
         }
-	
+	@Test
+        public void WhenSequenceEmptyThanThrowIllegalArgumentException(){
+                int[] sequence = new int[]{};
+                int key = 10;
+                BinarySearch.search(key, sequence);
+        }
 }
