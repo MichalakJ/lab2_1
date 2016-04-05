@@ -26,4 +26,17 @@ public class SearchResultTest {
         result.setPosition(-1);
         assertThat(result.isFound(), equalTo(false));
     }
+    @Test
+    public void setPositionShouldUpdatePositionWhenKeyGreaterThanMinusOne(){
+        SearchResult result= new SearchResult();
+        result.setPosition(6);
+        assertThat(result.getPosition(), equalTo(6));
+    }
+    @Test
+    public void setPositionShouldNotChangeWhenKeyLesserThanZero(){
+        SearchResult result= new SearchResult();
+        assertThat(result.getPosition(), equalTo(-1));
+        result.setPosition(-5);
+        assertThat(result.getPosition(), equalTo(-1));
+    }
 }
