@@ -5,10 +5,25 @@
  */
 package edu.iis.mto.bsearch;
 
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
+import org.junit.Test;
+
 /**
  *
  * @author Kuba
  */
 public class SearchResultTest {
-    
+    @Test
+    public void isFoundShouldReturnTrueWhenPositionSet(){
+        SearchResult result= new SearchResult();
+        result.setPosition(5);
+        assertThat(result.isFound(), equalTo(true));
+    }
+    @Test
+    public void isFoundShouldReturnFalseWhenPositionMinusOne(){
+        SearchResult result= new SearchResult();
+        result.setPosition(-1);
+        assertThat(result.isFound(), equalTo(false));
+    }
 }
