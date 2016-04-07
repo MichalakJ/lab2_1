@@ -102,5 +102,12 @@ public class BinarySearchTest {
                 int key = 10;
                 BinarySearch.search(key, sequence);
         }
+        @Test
+        public void WhenMultipleKeyInSequenceMiddleElementIsFound(){
+                int[] sequence = new int[]{1,2,3,3,3,3,3,4,5,6};
+                int key = 3;
+                SearchResult result = BinarySearch.search(key, sequence);
+                assertThat(result.getPosition(), equalTo((sequence.length-1)/2));
+        }
        
 }
