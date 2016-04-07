@@ -4,7 +4,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.*;
 
 import org.hamcrest.Matchers;
-
+import java.lang.IllegalArgumentException;
 
 import org.junit.Test;
 
@@ -96,10 +96,11 @@ public class BinarySearchTest {
                 SearchResult result = BinarySearch.search(key, sequence);
                 assertThat(result.getPosition(), equalTo(-1));
         }
-	@Test
+	@Test(expected=IllegalArgumentException.class)
         public void WhenSequenceEmptyThanThrowIllegalArgumentException(){
                 int[] sequence = new int[]{};
                 int key = 10;
                 BinarySearch.search(key, sequence);
         }
+       
 }
